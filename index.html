@@ -400,28 +400,37 @@
       <div class="sec-title rv">しまらぼで、<br>こんなに変わった！</div>
       <div class="sec-desc rv" style="margin-left:auto;margin-right:auto">メンバーのリアルな声をXからお届けします。横にスクロールしてご覧ください。</div>
     </div>
-    <div class="tweet-scroll rv">
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/aki_sesami/status/2023559949725692256"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/kaori_fluke/status/2032206749214626192"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/yosan_works/status/2030849575410614768"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/kaori_fluke/status/2031119721635131780"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/Rik_des26/status/2027519117914476822"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/nachi_624278/status/2026826806083596308"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/piyo1814536/status/2026622454601494911"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/hayato_8703_vis/status/2026258564181041413"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/nachi_624278/status/2025197036686245992"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/Rikitty_111/status/2023755495849554107"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/ane5mama/status/2021887699364560938"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/yosan_works/status/2023642800143917472"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/shi_ma_ya_su/status/2023512959910293605"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/kaori_fluke/status/2022059889015575005"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/nachi_624278/status/2021696111019254225"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/hayato_8703_vis/status/2021550039643103490"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/piyo1814536/status/2033146033908392279"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/kaori_fluke/status/2028945258571051147"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/kaori_fluke/status/2027141630768410967"></a></blockquote></div>
-      <div class="tweet-item"><blockquote class="twitter-tweet" data-conversation="none"><a href="https://x.com/yosan_works/status/2027631489710731570"></a></blockquote></div>
-    </div>
+    <div class="tweet-scroll rv" id="tweet-container"></div>
+    <script>
+    const tweetIds = [
+      "2023559949725692256","2032206749214626192","2030849575410614768",
+      "2031119721635131780","2027519117914476822","2026826806083596308",
+      "2026622454601494911","2026258564181041413","2025197036686245992",
+      "2023755495849554107","2021887699364560938","2023642800143917472",
+      "2023512959910293605","2022059889015575005","2021696111019254225",
+      "2021550039643103490","2033146033908392279","2028945258571051147",
+      "2027141630768410967","2027631489710731570"
+    ];
+    function loadTweets(){
+      const container = document.getElementById('tweet-container');
+      tweetIds.forEach(function(id){
+        const wrapper = document.createElement('div');
+        wrapper.className = 'tweet-item';
+        container.appendChild(wrapper);
+        twttr.widgets.createTweet(id, wrapper, {
+          conversation: 'none',
+          width: 350
+        });
+      });
+    }
+    if(window.twttr && twttr.widgets){
+      loadTweets();
+    } else {
+      window.addEventListener('load', function(){
+        if(window.twttr && twttr.widgets) loadTweets();
+      });
+    }
+    </script>
     <div class="review-bottom rv">
       <p style="font-size:.88rem;color:var(--muted);margin-bottom:16px">もっとメンバーの声を見てみる</p>
       <a href="https://x.com/search?q=%23%E3%81%97%E3%81%BE%E3%82%89%E3%81%BC" target="_blank" class="xlink">𝕏 #しまらぼ を検索する →</a>
