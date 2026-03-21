@@ -61,7 +61,8 @@
     .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 0;font-family:'Inter',sans-serif;font-size:.72rem;color:#FFD666;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:24px;animation:fadeUp .8s ease both}
     .dot{width:8px;height:8px;border-radius:50%;background:#FFD666;animation:pulse 2s infinite;flex-shrink:0}
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-    h1{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(2.6rem,6vw,5rem);line-height:1.2;letter-spacing:.02em;margin-bottom:28px;color:#fff;animation:fadeUp .8s .1s ease both}
+    h1{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(2.6rem,6vw,5rem);line-height:1.2;letter-spacing:.02em;margin-bottom:28px;color:#fff;animation:fadeUp .8s .1s ease both;word-break:keep-all}
+    @media(max-width:640px){h1{font-size:2.2rem}}
     h1 .acc{color:var(--acc)}
     .hsub{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:48px;animation:fadeUp .8s .2s ease both;line-height:2;font-weight:300;max-width:640px;margin-left:auto;margin-right:auto}
     .hbtns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .3s ease both}
@@ -117,11 +118,11 @@
     /* ── NUMBERS ── */
     #numbers{padding:120px 0;background:var(--bg)}
     .numbers-top{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center;max-width:900px;margin:0 auto 56px}
-    @media(max-width:768px){.numbers-top{grid-template-columns:1fr;text-align:center}}
+    @media(max-width:768px){.numbers-top{grid-template-columns:1fr;text-align:center}.numbers-top img{width:200px;margin:0 auto}}
     .numbers-photo{border-radius:20px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow2)}
     .numbers-photo img{width:100%;height:100%;object-fit:cover;display:block}
     .big-numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto}
-    @media(max-width:640px){.big-numbers{grid-template-columns:1fr}}
+    @media(max-width:640px){.big-numbers{grid-template-columns:repeat(2,1fr)}}
     .bnum-card{padding:40px 24px;text-align:center;background:var(--bg2);border:1px solid var(--bdr);border-radius:20px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
     .bnum-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
     .bnum-card.center{background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.2)}
@@ -284,7 +285,7 @@
   </div>
   <div class="hero-inner">
     <div class="eyebrow"><span class="dot"></span>NEW ERA OF DESIGNERS</div>
-    <h1>デザイナー超覚醒<br><span class="acc">コミュニティ</span> しまらぼ</h1>
+    <h1>デザイナー超覚醒<br><span class="acc">コミュニティ</span>しまらぼ</h1>
     <p class="hsub">実践とレビュー、対話を通じてデザインスキルを向上させるコミュニティ。<br>みんなが主役になり、みんなが覚醒できる場所。</p>
     <div class="hbtns">
       <a href="https://page.theapps.jp/paid/join/A8hv3G40M25l65n9" class="btn-primary apps-af">今すぐ参加する</a>
